@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+.userSession-main{
+    background-color: rgb(149, 161, 168);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userSessionForm-container{
+    padding: 30px;
+    width: 300px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.userSessionForm div{
+    display: flex;
+    flex-direction: column; 
+    margin: 10px;
+}
+.userSessionForm div label{
+   font-size: .9rem;
+   margin-bottom: 5px;
+}
+
+.formField{
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+}
+.btn-normal{
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-normal:hover{
+    background-color: darkslateblue;
+}
+.btn-secundary{
+    height: 45px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    cursor: pointer;
+}
+.btn-secundary a{
+    color: #fff;
+    text-decoration-line: none;
+    font-size: 1.2rem; 
+}
+.btn-secundary:hover{
+    background-color: darkslateblue;
+}
+
+.footer-options-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+    font-size: .9rem;
+}
+.footer-options-container p a{
+    text-decoration-line: none;
+    color: darkslateblue;
+}
+.footer-options-container p a:hover{
+    text-decoration-line:underline;
+}

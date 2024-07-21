@@ -1,0 +1,71 @@
+<main class="main-container">
+
+
+    <nav class="nav">
+        <section>
+            <div class="cart-header" data-cid="{{cid}}">
+                <button class="clear-cart-btn" id="clear-cart-btn" onclick="clearCart()">Vaciar Carrito</button>
+            </div>
+        </section>
+        <section class="menu">
+            <div>
+                <a href="/products">Productos</a>
+            </div>
+            <span>|</span>
+            <div>
+                <a href="/user/current">Mi Perfil</a>
+            </div>
+            <span>|</span>
+            <div>
+                <a href="/user/logout">Logout</a>
+            </div>
+            <span>|</span>
+            <div class="user" data-cid="{{cid}}">
+                <p><strong>{{owner}}</strong></p>
+            </div>
+        </section>
+    </nav>
+
+    
+
+
+    <section class="products-list-container" id="products-list-container">
+
+        {{#if products.length}}
+
+        {{#each products}}
+        <div class="product-container">
+
+            <section class="product" data-cid="{{../cid}}" data-pid="{{this.pid}}">
+
+                <div class="img-container">
+                    <img src="{{this.thumbnails}}" alt="{{this.title}}" />
+                </div>
+
+                <div class="info-container">
+                    <h3>{{this.title}}</h3>
+                    <h4><b>Precio:</b> ${{this.price}}</h4>
+                    <p><b>Cantidad:</b> {{this.quantity}}</p>
+                    {{!-- <p><b>ID:</b> {{this.pid}}</p> --}}
+                    <button onclick="purchase('{{../cid}}', '{{this.pid}}')">Comprar</button>
+                </div>
+
+            </section>
+
+            <section class="btn-container">
+                <button onclick="deleteProduct('{{this.pid}}')">Quitar</button>
+            </section>
+
+        </div>
+        {{/each}}
+
+
+        {{else}}
+        <h3>Tu carrito está vacío</h3>
+        {{/if}}
+
+    </section>
+
+</main>
+
+<script src="/js/cartActions.js"></script>
