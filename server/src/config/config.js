@@ -8,7 +8,7 @@ dotenv.config({
 });
 
 export default { 
-    port: process.env.SERVER_PORT,
+    port: process.env.PORT,
     mongoUrl: process.env.MONGO_URL,
     mongoUrlTest: process.env.MONGO_URL_TEST,
     persistence: program.opts().persist,

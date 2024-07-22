@@ -154,10 +154,10 @@ app.use('/mockingproducts', fakeProductsRoutes)
 =           declaracion de PORT              =
 =============================================*/
 
-const SERVER_PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
-const httpServer = app.listen(SERVER_PORT, () => {
-    console.log(`SERVER RUN ON PORT: ${SERVER_PORT}`)
+const httpServer = app.listen(PORT, () => {
+    console.log(`SERVER RUN ON PORT: ${PORT}`)
 })
 
 //servidor para trabajar con sockets viviendo en nuestro servidor principal
