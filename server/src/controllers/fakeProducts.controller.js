@@ -7,7 +7,7 @@ import userModel from '../services/dao/db/models/user.model.js';
 
 
 //   post
-//   http://localhost:8080/mockingproducts/db/
+
 export const mockingProductsInDB = async (req, res) => {
 
     try {

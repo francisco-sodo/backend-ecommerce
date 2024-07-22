@@ -5,7 +5,7 @@ import { expect } from 'chai';
 
 
 
-const requester = supertest('http://localhost:8080')
+const requester = supertest(`http://localhost:${process.env.PORT}`)
 
 
 // ? -----  ST - G L O B A L  ----- ? //

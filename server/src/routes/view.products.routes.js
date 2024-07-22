@@ -6,7 +6,7 @@ import { productsModel } from "../services/dao/db/models/products.model.js";
 const router = Router();
 
 //PAGINATION con HB. VISTA DE TODOS LOS PRODUCTOS
-// EJ: http://localhost:8080/products?page=1
+
 
 router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), async (req, res) => {
     // default page
@@ -37,7 +37,7 @@ router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), 
       result.nextLink = result.hasNextPage ? `?page=${result.nextPage}` : "";
       result.isValid = !(page < 1 || page > result.totalPages);
 
-      // buscar por orden de precio ---  http://localhost:8080/products?page=1&sort=asc
+      // /products?page=1&sort=asc
       if (sort) {
         result.prevLink = result.hasPrevPage
           ? `?page=${result.prevPage}&sort=${sort}`
@@ -48,7 +48,7 @@ router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), 
         result.isValid = !(page < 1 || page > result.totalPages);
       }
 
-      // buscar por categoria ("Usado" / "Nuevos") ---   http://localhost:8080/products?page=1&search=Usado
+      // buscar por categoria ("Usado" / "Nuevos") ---  /products?page=1&search=Usado
       if (search) {
         result = await productsModel.paginate(categoryFilter, {
           page,
@@ -65,7 +65,7 @@ router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), 
           : "";
         result.isValid = !(page < 1 || page > result.totalPages);
 
-        // buscar por categoria y por orden de precio ---  http://localhost:8080/products?page=1&search=Usado&sort=asc
+        // buscar por categoria y por orden de precio ---  /products?page=1&search=Usado&sort=asc
         if (sort) {
           result.prevLink = result.hasPrevPage
             ? `?page=${result.prevPage}&search=${search}&sort=${sort}`
@@ -128,7 +128,7 @@ router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), 
 
 
 //* VISTA DE DETALLE DE PRODUCTO
-//EJ: http://localhost:8080/products/product/65f39b4e3942d59690fbe26f
+
 
 router.get("/product/:pid",passportCall("jwt"),authorization("user", "premium", "admin"),async (req, res) => {
     let { pid } = req.params;

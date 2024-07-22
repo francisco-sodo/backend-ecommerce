@@ -6,7 +6,7 @@ const program = new Command(); //Crea la instancia de comandos de commander.
 
 program
     .option('-d', 'Variable para debug', false)
-    .option('-p <port>', 'Puerto del Server', 8080)
+    .option('-p <port>', 'Puerto del Server', process.env.PORT)
     .option('--mode <mode>', 'Modo de trabajo del Server', 'development')
     .option('--persist <mode>', 'Modo de persistencia', 'mongodb')
 program.parse() // paesea los comando y valida si son correctos. Cierra.
