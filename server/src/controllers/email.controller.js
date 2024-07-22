@@ -149,13 +149,15 @@ export const tempDbMails = {}
 export const sendEmailToResetPassword = (req, res) => {
     try {
         const { email } = req.body
+        const baseurl = req.headers.origin
         if (!email) {
             req.logger.warning('400: Debe proveer un email valido');
             return res.status(400).send('Debe proveer un email valido')
 
         }
         const token = v4();
-        const link = `http://localhost:${process.env.PORT}/api/email/reset-password/${token}`;
+        const link = `${baseurl}/api/email/reset-password/${token}`;
+        //const link = `http://localhost:${process.env.PORT}/api/email/reset-password/${token}`;
 
         tempDbMails[token] = {
             email,
