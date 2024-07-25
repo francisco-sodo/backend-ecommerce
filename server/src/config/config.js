@@ -8,7 +8,7 @@ dotenv.config({
 });
 
 export default { 
-    port: process.env.PORT || process.env.SERVER_PORT || 3000,
+    port: process.env.PORT || process.env.SERVER_PORT || 8080,
     mongoUrl: process.env.MONGO_URL,
     mongoUrlTest: process.env.MONGO_URL_TEST,
     persistence: program.opts().persist,
@@ -17,7 +17,7 @@ export default {
     adminPassword: process.env.ADMIN_PASSWORD,
     githubClientId: process.env.GITHUB_CLIENT_ID,
     githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
-    // githubCallbackURL: process.env.GITHUB_CALLBACK_URL,
+    githubCallbackURL: process.env.GITHUB_CALLBACK_URL,
     jwtPrivateKey: process.env.PRIVATE_KEY,
     cookieParser: process.env.COOKIE_PARSER,
     gmailAccount: process.env.GMAIL_ACCOUNT,
