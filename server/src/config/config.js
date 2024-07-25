@@ -17,7 +17,7 @@ export default {
     adminPassword: process.env.ADMIN_PASSWORD,
     githubClientId: process.env.GITHUB_CLIENT_ID,
     githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
-    githubCallbackURL: process.env.GITHUB_CALLBACK_URL,
+    // githubCallbackURL: process.env.GITHUB_CALLBACK_URL,
     jwtPrivateKey: process.env.PRIVATE_KEY,
     cookieParser: process.env.COOKIE_PARSER,
     gmailAccount: process.env.GMAIL_ACCOUNT,
