@@ -159,7 +159,6 @@ export const userRegisterByGithub = async (req, res) => {
     }
     
     req.logger.info(`:::: USUARIO LOGUEADO :::: \nUsuario: ${tokenUser.email}`);
-    // req.logger.info(`:::: USUARIO LOGUEADO :::: \nUsuario: ${tokenUser.cart}`);
 
   const access_token = generateJWToken(tokenUser);
 

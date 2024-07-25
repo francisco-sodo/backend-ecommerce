@@ -157,7 +157,6 @@ export const sendEmailToResetPassword = (req, res) => {
         }
         const token = v4();
         const link = `${baseurl}/api/email/reset-password/${token}`;
-        //const link = `http://localhost:${process.env.PORT}/api/email/reset-password/${token}`;
 
         tempDbMails[token] = {
             email,
