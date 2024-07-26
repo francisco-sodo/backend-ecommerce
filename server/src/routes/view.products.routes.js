@@ -86,7 +86,7 @@ router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), 
 
         res.render("products", {
           title: "Vista | Productos",
-          styleProds: "styleProducts.css",
+          styleProds: "StyleProducts.css",
           user: user,
           products: result.docs,
           totalDocs: result.totalDocs,
@@ -103,7 +103,7 @@ router.get("/", passportCall("jwt"), authorization("user", "premium", "admin"), 
       } else {
         res.render("products", {
           title: "Vista | Productos",
-          styleProds: "styleProducts.css",
+          styleProds: "StyleProducts.css",
           user: user,
           products: result.docs,
           totalDocs: result.totalDocs,
@@ -150,7 +150,7 @@ router.get("/product/:pid",passportCall("jwt"),authorization("user", "premium", 
 
         res.render("product", {
           title: "Vista | Producto",
-          styleProdDetail: "styleProductDetail.css",
+          styleProdDetail: "StyleProductDetail.css",
           cid: cid,
           isNotAdmin: req.user.role !== "admin",
           userName: user.name,
@@ -169,7 +169,7 @@ router.get("/product/:pid",passportCall("jwt"),authorization("user", "premium", 
       } else {
         res.render("product", {
           title: "Vista | Producto",
-          styleProdDetail: "styleProductDetail.css",
+          styleProdDetail: "StyleProductDetail.css",
           isNotAdmin: req.user.role !== "admin",
           userName: user.name,
           product: {

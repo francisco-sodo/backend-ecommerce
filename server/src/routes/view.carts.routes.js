@@ -23,7 +23,7 @@ router.get('/:cid', passportCall('jwt'),authorization('user','premium'), async (
             title: "Vista | Carrito",
             cid: cid,
             owner: user.name,
-            styleCart: "styleCart.css",
+            styleCart: "StyleCart.css",
             products: cart.products.map(item => ({
                 pid: item.product._id,
                 title: item.product.title,
